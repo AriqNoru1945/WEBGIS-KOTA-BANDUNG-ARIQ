@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGis Kota Bandung</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!DOCTYPE html>
+
+</body>
+</html>
+
+</head>
+<body>
+    <header id="navbar">
+        <div class="container">
+        <div class="logo">
+        <img src="asset/Logo Bandung.png" alt="Logo" width="100">
+        <h1>WebGIS Kota Bandung</h1>
+        </div>
+        <nav>
+        <ul>
+        <li><a href="#hero-section">Home</a></li>
+        <li><a href="#map-section">Map</a></li>
+        <li><a href="#data-section">Data</a></li>
+        <li><a href="#author-section">Author</a></li>
+        <li><a href="#footer">Contact</a></li>
+        </ul>
+        </nav>
+        </div>
+        </header>
+        <!--Hero Section-->
+        <div id="hero-section" class="hero-section">
+            <div class="hero-content">
+            <h1>WebGIS Basis Data Spasial Kota Bandung</h1>
+            <p>Halaman untuk Melakukan Eksplorasi Basis Data Spasial di Kota Bandung</p>
+            </div>
+        <!--Map Section--> 
+            </div>
+            <div id="map-section">
+                <h2>Yuk kita jelajahi kota Bandung dalam Peta dibawah ini</h2>
+                <div id="map">
+                <!-- akan muncul peta disini -->
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                  <meta charset="UTF-8">
+                  <title>Peta Interaktif Kota Bandung</title>
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <!-- Leaflet CSS -->
+                  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+                  <style>
+                    #map {
+                      height: 100vh;
+                      width: 100%;
+                    }
+                  </style>
+                </head>
+                <body>
+                
+                  <div id="map"></div>
+                
+                  <!-- Leaflet JS -->
+                  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                  <script>
+                    // Inisialisasi peta dan fokus ke Kota Bandung
+                    var map = L.map('map').setView([-6.914744, 107.609810], 13);
+                
+                    // Tambahkan tile layer dari OpenStreetMap
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                      attribution: '&copy; OpenStreetMap contributors'
+                    }).addTo(map);
+                
+                    // Tambahkan marker default di pusat Bandung
+                    var marker = L.marker([-6.914744, 107.609810]).addTo(map)
+                      .bindPopup('Kota Bandung<br>Koordinat: -6.914744, 107.609810')
+                      .openPopup();
+                
+                    // Fungsi untuk menambahkan marker saat peta diklik
+                    function onMapClick(e) {
+                      // Hapus marker sebelumnya
+                      if (marker) {
+                        map.removeLayer(marker);
+                      }
+                
+                      // Tambahkan marker baru di titik yang diklik
+                      marker = L.marker(e.latlng).addTo(map)
+                        .bindPopup("Anda mengklik di sini:<br>" + e.latlng.toString())
+                        .openPopup();
+                    }
+                
+                    // Tambahkan event listener untuk klik pada peta
+                    map.on('click', onMapClick);
+                  </script>
+                
+                </body>
+                </html>
+                </div>
+                </div>
+                
+                <!--Data Section--> 
+                <div id="data-section"> 
+                    <h2>Data Geospasial Nuansa Puitis</h2> 
+                    <div class="container"> 
+                        <div class="column"> 
+                            <div class="data-item"> 
+                                <img src="asset/dan Bandung.jpg"> 
+                                <div class="description"> 
+                                    <h3>KENAPA BANDUNG?</h3> 
+                                    <p>Kenapa Bandung?
+                                        Karena setiap sudutnya adalah koordinat yang menyimpan cerita,
+                                        Setiap lekuk lembah dan pucuk bukitnya adalah peta kenangan,
+                                        Dalam ruang dan waktu, Bandung bukan sekadar titik di peta—
+                                        Ia adalah jantung yang berdetak dalam sistem geospasial Nusantara.
+                                        
+                                        Kenapa Bandung?
+                                        Karena udara sejuknya tak hanya bisa dirasa, tapi bisa dipetakan,
+                                        Karena hijaunya taman dan birunya langitnya—
+                                        bisa diukur, dikaji, dan dirawat lewat teknologi dan cinta.
+                                        
+                                        Bandung bukan hanya di mana kita berpijak,
+                                        tapi bagaimana kita memahami ruang,
+                                        menyulam data dan perasaan,
+                                        menyatu dalam koordinat yang penuh makna.</p> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        <div class="column"> 
+                            <div class="data-item"> 
+                                <img src="asset/Warga Bandung.jpeg" alt="Image 1"> 
+                                <div class="description"> 
+                                    <h3> PENDUDUK BANDUNG: SEBUAH PUISI DALAM TITIK TITIK KOORDINAT</h3> 
+                                    <p>Bandung bukan sekadar kota,
+                                        ia adalah mosaik kehidupan dalam peta,
+                                        tempat jutaan jiwa bernafas di antara lintang dan bujur,
+                                        di bawah langit yang berkabut rindu.
+                                        
+                                        RW jadi semesta kecil,
+                                        RT jadi simpul harmoni,
+                                        dan rumah-rumah jadi titik cinta dalam grid spasial.
+                                        
+                                        Dari pusat yang padat hingga pinggiran yang teduh,
+                                        kepadatan di Bandung bukan hanya angka,
+                                        tapi cerita ruang yang bisa dilihat dari satelit,
+                                        dan dirasa di lorong sempit.
+                                        
+                                        Dari atas langit, tampak urbanisasi:
+                                        rumah rapat, jalan meliuk,
+                                        pasar hidup, sekolah tumbuh.
+                                        
+                                        Bandung dihuni lebih dari 2,5 juta jiwa—
+                                        bukan sekadar data,
+                                        tapi nada dalam simfoni spasial,
+                                        yang terus bergerak dan beradaptasi.</p> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        <div class="column"> 
+                            <div class="data-item"> 
+                                <img src="asset/bandung bandungan.jpg" alt="Image 1"> 
+                                <div class="description"> 
+                                    <h3>BANDUNG, DALAM PETA DAN PUISI</h3> 
+                                    <p>
+                                        Bandung bukan sekadar kota—
+                                        ia terbentang di antara garis bujur dan lintang,
+                                        tempat ruang dan rasa saling bersinggungan.
+                                        
+                                        16 kecamatan, 151 kelurahan,
+                                        seperti bait-bait dalam puisi spasial:
+                                        yang satu rimbun, yang lain padat,
+                                        semuanya bernyanyi dalam layer-layer peta.
+                                        
+                                        Di utara, hijau Dago dan Ciburial berhembus sejuk,
+                                        di pusat, jalan-jalan rapat menyimpan hiruk sejarah,
+                                        di selatan, dataran rendah berbisik lewat aliran Citarum.
+                                        
+                                        Bandung bukan hanya terlihat dari citra satelit,
+                                        ia bisa dirasa—
+                                        dalam setiap garis kontur,
+                                        setiap sebaran rumah,
+                                        dan tiap jejak kaki yang tertinggal di ruang kota.</p> 
+                                </div> 
+                            </div> 
+                        </div> 
+                    </div>
+                </div> 
+
+
+                <div id="author-section">     
+                            <div class="author-content"> 
+                                <h2>Tentang Pembuat</h2> 
+                                <img src="asset/Ariq.jpeg" alt="Profile Picture" class="profile-picture"> 
+                                <div class="author-name"> 
+                                    <h3>Ariq Rajasa Lukmansyah</h3> 
+                                </div> 
+                                <p>Ariq Rajasa Lukmansyah adalah seorang mahasiswa Sains Informasi Geografi. Sudah semester 4 tapi masih saja kurang dalam hal konsistensi dan juga pergaulan, dulu kurang tahu sama jurusan geografi geografian ini karena ga ada di SMA sama sekali, tapi lama kelamaan yaudah jalanin aja</p> 
+                            </div> 
+                        </div> 
+</body>
+</html>
+
+
+
